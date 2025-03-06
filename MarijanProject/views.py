@@ -37,6 +37,11 @@ def contact_view(request):
         return render(request, 'contact.html', {'form': form})
 
 
+def datenschutzerklarung(request):
+    return render(request, 'datenschutzerklarung.html')
+
+def impressum(request):
+    return render(request, 'impressum.html')
 # Home
 def index(request):
     return render(request, 'index.html')
