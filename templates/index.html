@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="mk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Epoxy Ristov</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="/media/icons/logo.png" type="image/png" sizes="32x32">
+    <link rel="icon" href="/media/icons/logo-mobile.png" type="image/png" sizes="16x16">
+    <link rel="icon" href="/media/icons/logo-tablet.png" type="image/png" sizes="24x24">
+    <style>
+        .carousel-caption {
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .btn-outline-light {
+            border-width: 2px;
+            font-size: 18px;
+        }
+
+        .carousel-item img {
+            height: 510px;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .bg-light a {
+            text-decoration: none;   /* Тргнува подцртувањето на линковите */
+        }
+
+        .bg-light a:hover {
+            text-decoration: underline;  /* Ако сакаш да се појави подцртување кога се поместува курсорот */
+        }
+
+        @media (max-width: 768px) {
+            .carousel-item img {
+                height: 300px;
+            }
+        }
+        .custom-container {
+            max-width: 1100px; /* Прилагоди ширина по потреба */
+            background-color: #f8f9fa; /* Светло сива позадина */
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Блага сенка */
+        }
+
+        /* Центрирање на главниот div */
+        .centered-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh; /* За вертикално центрирање */
+        }
+
+        /* Поставување на слики */
+        .content-box img {
+            width: 100%;
+            max-height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        /* Текст стил */
+        .content-box p {
+            font-size: 18px;
+            color: #333;
+        }
+        .text-container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Сенка */
+        }
+
+        /* Глобален стил за текстот */
+        .text-container h2 {
+            font-size: 1.8rem; /* Малку помал шрифт */
+            color: #333;
+            margin-bottom: 20px; /* Простор помеѓу насловот и текстот */
+        }
+
+        .text-container p {
+            font-size: 1rem; /* Првиот параграф ќе има 1rem */
+            color: #333;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        /* Зелен стил за првиот параграф */
+        .text-container p.boja-text {
+            color: #7b7455; /* Зелена боја */
+            font-size: 1.0rem; /* Малку поголем од останатите */
+        }
+
+        /* Помал текст за понатамошниот опис */
+        .text-container p.small-text {
+            font-size: 1.0rem; /* Мал текст за понатамошниот опис */
+            color: #000000;
+        }
+        /* Стил за секцијата со 3 дела */
+        .three-columns {
+            max-width: 1100px;
+            margin: 40px auto;
+            display: flex;
+            justify-content: space-between;
+            text-align: center;
+            flex-wrap: wrap; /* Овозможи да се прилагодуваат елементите на мобилни уреди */
+        }
+
+        .three-columns .column {
+            flex: 1; /* Секој дел ќе биде еднакво широк */
+            padding: 20px;
+            background-color: #f1f1f1; /* Светла позадина */
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Блага сенка */
+            margin: 10px;
+        }
+
+        .three-columns .column h3 {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .three-columns .column p {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        /* Стил за копчиња */
+        .three-columns .column .btn {
+            font-size: 1rem;
+            padding: 10px 20px;
+            color: #fff;
+            background-color: #28a745;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
+        .three-columns .column .btn:hover {
+            background-color: #218838;
+        }
+
+        /* За мобилни уреди */
+        @media (max-width: 768px) {
+            .three-columns {
+                display: block; /* Колоните ќе бидат едно под друго на мобилни */
+            }
+
+            .three-columns .column {
+                width: 100%; /* Секој дел ќе биде со ширина од 100% */
+                margin-bottom: 20px; /* Простор помеѓу колоните */
+            }
+
+            .three-columns .column .btn {
+                width: 100%; /* Копчето ќе зазема цела ширина */
+                text-align: center; /* Центрирање на копчето */
+            }
+        }
+
+        /* Стил за текстот со линија */
+        .three-columns .column .line-text {
+            display: flex;
+            align-items: center;
+            justify-content: left;
+            margin-bottom: 20px;
+        }
+
+        .three-columns .column .line-text::before {
+            content: "";
+            flex-grow: 1;
+            height: 1px;
+            background-color: #28a745; /* Зелената линија */
+            margin-right: 10px;
+        }
+
+        .three-columns .column .line-text p {
+            margin: 0;
+            color: #555;
+            font-size: 1rem;
+        }
+
+        .navbar-brand img {
+            height: 50px; /* Прилагоди според потребата */
+            width: auto;
+        }
+
+        .carousel-caption p,h1 {
+            color: black;  /* Црна боја */
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="bg-light text-center py-2">
+    <strong>Telefon:</strong> <a href="tel:+436644125946">+43 664 4125946</a>  | <strong>E-mail:</strong> <a href="mailto:beschichtung.ristov@gmail.com">beschichtung.ristov@gmail.com</a>
+</div>
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <img src="/media/icons/logo.png" alt="Logo" height="50">
+        </a>
+        <--- url('/media/produkt/galactic.jpg'); -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="{% url 'home' %}">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'bodenbeschichtungen' %}">Bodenbeschichtungen</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'wandbeschichtungen' %}">Wandbeschichtungen</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'abdichtungen' %}">Abdichtungen</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'untergrundvorbereitung' %}">Untergrundvorbereitung</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'contact' %}">Anfrage</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'about_us' %}">Kontakt</a></li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div id="carouselExample" class="carousel slide" data-bs-ride="carousel" data-bs-interval="3000">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="../media/slideshow/image01.jpg" class="d-block w-100" alt="Img 1">
+        </div>
+        <div class="carousel-item">
+            <img src="../media/slideshow/image02.jpg" class="d-block w-100" alt="Img 2">
+        </div>
+        <div class="carousel-item">
+            <img src="../media/slideshow/image03.webp" class="d-block w-100" alt="Img 3">
+        </div>
+    </div>
+    <div class="carousel-caption text-center">
+        <h1>Willkomen</h1>
+        <p><strong>Wir sind Ihr Profi für Bodenbeläge und Bodenbeschichtungen im privaten und gewerblichen Bereich.</strong></p>
+        <a href="tel:+436644125946" class="btn btn-outline-light me-2">Anruf</a>
+        <a href="mailto:beschichtung.ristov@gmail.com" class="btn btn-outline-light">E-Mail</a>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    </button>
+</div>
+
+
+<div class="container text-container">
+    <h2>Epoxy Ristov Bodenbeschichtung</h2>
+    <p class="boja-text"><strong>Willkommen bei Epoxy Ristov Bodenbeschichtung, Ihrem Experten für hochwertige Epoxidharzbeschichtungen!
+        Wir bieten Ihnen maßgeschneiderte Lösungen für gewerbliche, industrielle und private Anwendungen.
+        Unsere Epoxidharzbeschichtungen bieten nicht nur eine hervorragende Haltbarkeit,
+        sondern auch eine ästhetisch ansprechende Oberfläche, die den Anforderungen auch in anspruchsvollsten Umgebungen gerecht wird.</strong></p>
+    <p class="small-text">Egal, ob Sie Ihren Boden schützen,
+        eine strapazierfähige Oberfläche für Ihre Produktionsräume schaffen oder einfach nur eine optische Aufwertung wünschen – bei uns finden Sie die passende Lösung.
+        Unsere Epoxidharze sind beständig gegen Chemikalien,
+        Abrieb und hohe Temperaturen und garantieren Ihnen eine langlebige und pflegeleichte Oberfläche.</p>
+    <p class="small-text">Überzeugen Sie sich selbst von der Qualität und Vielseitigkeit unserer Epoxidharzbeschichtungen.
+        Wir freuen uns darauf, Sie bei Ihrem nächsten Projekt zu unterstützen!</p>
+</div>
+
+<div class="container three-columns">
+    <div class="column">
+        <h3>Über uns</h3>
+        <p>Erfahren Sie mehr über unser Unternehmen, unsere Werte und unsere langjährige Erfahrung in der Boden- und Wandbeschichtung.</p>
+        <a href="{% url 'about_us' %}" class="btn">Mehr erfahren</a>
+    </div>
+
+    <div class="column">
+        <h3>Bodenbeschichtung</h3>
+        <p>Entdecken Sie die Vorteile unserer langlebigen und ästhetischen Bodenbeschichtungen – perfekt für Industrie, Gewerbe und private Anwendungen.</p>
+        <a href="{% url 'bodenbeschichtungen' %}" class="btn">Bodenbeschichtung</a>
+    </div>
+
+    <div class="column">
+        <h3>Unsere Arbeiten</h3>
+        <div class="line-text">
+            <p>In unserer Galerie können Sie unsere abgeschlossenen Projekte entdecken und sich von der Qualität unserer Arbeit überzeugen.</p>
+        </div>
+        <a href="{% url 'gallery' %}" class="btn">Zu unseren Referenzen</a>
+    </div>
+</div>
+
+
+<div class="centered-section">
+    <div class="container custom-container">
+
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <img src="../media/gallery/gal8.jpg" alt="Слика 1" class="img-fluid">
+            </div>
+            <div class="col-md-6 content-box">
+                <p>Wir sind Ihr zuverlässiger Partner für professionelle Boden- und Wandbeschichtungen.
+                    Mit unserer langjährigen Erfahrung und hochwertigen Materialien sorgen wir für langlebige,
+                    ästhetische und widerstandsfähige Oberflächen – perfekt für private, gewerbliche und industrielle Bereiche.</p>
+            </div>
+        </div>
+
+        <!-- Втор ред (текст лево, слика десно) -->
+        <div class="row align-items-center mt-4">
+            <div class="col-md-6 content-box">
+                <p>Unsere maßgeschneiderten Lösungen garantieren optimalen Schutz, einfache Pflege und eine edle Optik.
+                    Egal, ob Sie eine strapazierfähige Beschichtung für stark beanspruchte Flächen benötigen oder Ihre Räume optisch aufwerten möchten
+                    – wir bieten Ihnen die perfekte Lösung!</p>
+            </div>
+            <div class="col-md-6">
+                <img src="../media/gallery/gal5.png" alt="Слика 2" class="img-fluid">
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Футер -->
+<footer class="bg-dark text-white mt-5 p-4">
+    <div class="container">
+        <div class="row">
+            <!-- Google Maps -->
+            <div class="col-md-6">
+                <h5>Standort</h5>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2686.484821820289!2d13.10021299710676!3d47.67500374197447!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4776951da6a805c9%3A0x8681d79c9e97c367!2sPingitzzerkai%206c%2C%205400%20Hallein%2C%20Austria!5e0!3m2!1sen!2smk!4v1741143277680!5m2!1sen!2smk" width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+            <!-- Адреса и работно време -->
+            <div class="col-md-6">
+                <h5>Kontakt</h5>
+                <p><strong>Unternehmen: </strong>Marijan Ristov</p>
+                <p><strong>Adresse: </strong>Pingitzzerkai 6c, 5400 Hallein, Austria</p>
+                <p><strong>Tel: </strong><a href="tel:+436644125946">+43 664 4125946</a> </p>
+                <p><strong>E-Mail: </strong><a href="mailto:beschichtung.ristov@gmail.com">beschichtung.ristov@gmail.com</a></p>
+                <p><strong>Öffnungszeiten:</strong></p>
+                <ul class="list-unstyled">
+                    <li>Montag - Freitag: 07:00 - 18:00</li>
+                    <li>Samstag & Sonntag: Termine nach telefonischer Vereinbarung</li>
+                </ul>
+                <div>
+                    <h5>Info:</h5>
+                    <a href="{% url 'impressum' %}" class="btn btn-light">Impressum</a>
+                    <a href="{% url 'datenschutzerklarung' %}" class="btn btn-light">Datenschutzerklärung</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

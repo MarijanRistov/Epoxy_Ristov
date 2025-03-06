@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="mk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Impressum</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="/media/icons/logo.png" type="image/png" sizes="32x32">
+    <link rel="icon" href="/media/icons/logo-mobile.png" type="image/png" sizes="16x16">
+    <link rel="icon" href="/media/icons/logo-tablet.png" type="image/png" sizes="24x24">
+
+    <style>
+        .carousel-caption {
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .btn-outline-light {
+            border-width: 2px;
+            font-size: 18px;
+        }
+
+        .carousel-item img {
+            height: 510px;
+            width: 100%;
+            object-fit: cover;
+        }
+
+        .bg-light a {
+            text-decoration: none;   /* Тргнува подцртувањето на линковите */
+        }
+
+        .bg-light a:hover {
+            text-decoration: underline;  /* Ако сакаш да се појави подцртување кога се поместува курсорот */
+        }
+
+        @media (max-width: 768px) {
+            .carousel-item img {
+                height: 300px;
+            }
+        }
+        .custom-container {
+            max-width: 1100px; /* Прилагоди ширина по потреба */
+            background-color: #f8f9fa; /* Светло сива позадина */
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Блага сенка */
+        }
+
+        /* Центрирање на главниот div */
+        .centered-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh; /* За вертикално центрирање */
+        }
+
+        /* Поставување на слики */
+        .content-box img {
+            width: 100%;
+            max-height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        /* Текст стил */
+        .content-box p {
+            font-size: 18px;
+            color: #333;
+        }
+        .text-container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Сенка */
+        }
+
+        /* Глобален стил за текстот */
+        .text-container h2 {
+            font-size: 1.8rem; /* Малку помал шрифт */
+            color: #333;
+            margin-bottom: 20px; /* Простор помеѓу насловот и текстот */
+        }
+
+        .text-container p {
+            font-size: 1rem; /* Првиот параграф ќе има 1rem */
+            color: #333;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        /* Зелен стил за првиот параграф */
+        .text-container p.boja-text {
+            color: #7b7455; /* Зелена боја */
+            font-size: 1.0rem; /* Малку поголем од останатите */
+        }
+
+        /* Помал текст за понатамошниот опис */
+        .text-container p.small-text {
+            font-size: 1.0rem; /* Мал текст за понатамошниот опис */
+            color: #000000;
+        }
+        /* Стил за секцијата со 3 дела */
+        .three-columns {
+            max-width: 1100px;
+            margin: 40px auto;
+            display: flex;
+            justify-content: space-between;
+            text-align: center;
+            flex-wrap: wrap; /* Овозможи да се прилагодуваат елементите на мобилни уреди */
+        }
+
+        .three-columns .column {
+            flex: 1; /* Секој дел ќе биде еднакво широк */
+            padding: 20px;
+            background-color: #f1f1f1; /* Светла позадина */
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Блага сенка */
+            margin: 10px;
+        }
+
+        .three-columns .column h3 {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .three-columns .column p {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        /* Стил за копчиња */
+        .three-columns .column .btn {
+            font-size: 1rem;
+            padding: 10px 20px;
+            color: #fff;
+            background-color: #28a745;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
+        .three-columns .column .btn:hover {
+            background-color: #218838;
+        }
+
+        /* За мобилни уреди */
+        @media (max-width: 768px) {
+            .three-columns {
+                display: block; /* Колоните ќе бидат едно под друго на мобилни */
+            }
+
+            .three-columns .column {
+                width: 100%; /* Секој дел ќе биде со ширина од 100% */
+                margin-bottom: 20px; /* Простор помеѓу колоните */
+            }
+
+            .three-columns .column .btn {
+                width: 100%; /* Копчето ќе зазема цела ширина */
+                text-align: center; /* Центрирање на копчето */
+            }
+        }
+
+        /* Стил за текстот со линија */
+        .three-columns .column .line-text {
+            display: flex;
+            align-items: center;
+            justify-content: left;
+            margin-bottom: 20px;
+        }
+
+        .three-columns .column .line-text::before {
+            content: "";
+            flex-grow: 1;
+            height: 1px;
+            background-color: #28a745; /* Зелената линија */
+            margin-right: 10px;
+        }
+
+        .three-columns .column .line-text p {
+            margin: 0;
+            color: #555;
+            font-size: 1rem;
+        }
+
+        .navbar-brand img {
+            height: 50px; /* Прилагоди според потребата */
+            width: auto;
+        }
+        /* Контрастиран и чист изглед */
+        .container.text-container {
+            background-color: #f9f9f9;
+            padding: 30px;
+            margin-bottom: 50px;
+            border-radius: 8px;
+        }
+
+        .container.text-container h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        .container.text-container h3 {
+            font-size: 1.8em;
+            margin-top: 30px;
+            margin-bottom: 15px;
+            color: #444;
+        }
+
+        .container.text-container p, .container.text-container ul {
+            font-size: 1em;
+            line-height: 1.6;
+            color: #555;
+        }
+
+        .container.text-container ul {
+            margin-left: 20px;
+        }
+
+        .container.text-container ul li {
+            margin-bottom: 10px;
+        }
+
+        /* Стили за сликите да бидат квадратни и помали */
+        .image-section {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+
+        .image-section img {
+            width: 45%; /* Поставете ги сликите на 45% од ширината на контейнерот */
+            height: 200px; /* Поставете фиксна висина за да бидат квадратни */
+            object-fit: cover; /* Да не ја изобличуваат сликата */
+            border-radius: 8px; /* За заоблени агли */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Подобрување на линкови */
+        a {
+            text-decoration: none;
+            color: #007bff;
+        }
+
+        a:hover {
+            color: #0056b3;
+        }
+
+        /* Листа */
+        ul li {
+            margin-bottom: 12px;
+        }
+        /* Нов стил за копчето */
+        .btn-contact {
+            background-color: #000; /* Црна позадинска боја */
+            color: #fff; /* Бела текстуална боја */
+            border: 2px solid #000; /* Црна рамка */
+            padding: 10px 20px; /* Простор околу текстот */
+            text-transform: uppercase; /* Големи букви */
+            font-weight: bold; /* Подебел текст */
+            display: inline-block; /* За да изгледа како копче */
+            text-align: center; /* Центрирање на текстот */
+        }
+
+        .btn-contact:hover {
+            background-color: #333; /* Потемнување на позадината при ховер */
+            border-color: #333; /* Потемнување на рамката при ховер */
+            color: #fff; /* Бел текст при ховер */
+        }
+
+
+    </style>
+</head>
+<body>
+
+<div class="bg-light text-center py-2">
+    <strong>Telefon:</strong> <a href="tel:+436644125946">+43 664 4125946</a>  | <strong>E-mail:</strong> <a href="mailto:beschichtung.ristov@gmail.com">beschichtung.ristov@gmail.com</a>
+</div>
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <img src="../media/icons/logo.png" alt="Logo" height="50">
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="{% url 'home' %}">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'bodenbeschichtungen' %}">Bodenbeschichtungen</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'wandbeschichtungen' %}">Wandbeschichtungen</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'abdichtungen' %}">Abdichtungen</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'untergrundvorbereitung' %}">Untergrundvorbereitung</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'contact' %}">Anfrage</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'about_us' %}">Kontakt</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container text-container my-5">
+    <h2>Impressum</h2>
+    <p>Hier können Sie die erforderlichen rechtlichen Informationen eingeben.</p>
+
+    <h3>Unternehmensinformationen</h3>
+    <p><strong>Firmenname:</strong> Ristov Marijan</p>
+    <p><strong>Geschäftsadresse:</strong> Pingitzzerkai 6c, 5400 Hallein, Austria</p>
+    <p><strong>Telefonnummer:</strong> +43 664 4125946</p>
+    <p><strong>E-Mail:</strong> <a href="mailto:beschichtung.ristov@gmail.com">beschichtung.ristov@gmail.com</a></p>
+
+    <h3>Firmenregistrierung</h3>
+    <p><strong>UID-Nummer:</strong> ATU80918517</p>
+    <p><strong>Zuständiges Gericht:</strong> Bezirkshauptmannschaft Hallein</p>
+
+    <h3>Unternehmensgegenstand</h3>
+    <p>Durchführung von Epoxidharzbeschichtungen für Böden und Wände, Abdichtungen sowie Untergrundvorbereitungen.</p>
+    <p>Aufbringen einer flüssigen Kunstharzschicht unter Einbringung von Farbplättchen aus Kunststoff (Chipsbelag) und von Ziersplitt (Steinteppich), unter Ausschluss der den Bodenlegern, Malern, Anstreichern oder Lackierern vorbehaltenen Tätigkeiten.</p>
+
+    <h3>Kammer/Berufsverband-Zugehörigkeit(en)</h3>
+    <p>WKO</p>
+    
+    <h3>Rechtsform</h3>
+    <p>Einzelunternehmer</p>
+
+    <h3>Datenschutzrichtlinie</h3>
+    <p>Wir nehmen den Schutz Ihrer persönlichen Daten ernst. Hier erfahren Sie, welche Daten wir erfassen und wie wir sie verwenden.</p>
+
+    <h3>Haftungsausschluss</h3>
+    <p>Die Inhalte dieser Website wurden mit größtmöglicher Sorgfalt erstellt. Dennoch übernehmen wir keine Gewähr für die Richtigkeit, Vollständigkeit und Aktualität der bereitgestellten Inhalte. Alle Informationen können ohne vorherige Ankündigung geändert oder entfernt werden. Jegliche Haftung für Schäden, die direkt oder indirekt aus der Nutzung dieser Website entstehen, wird ausgeschlossen.</p>
+
+    <h3>Urheberrecht</h3>
+    <p>Die durch den Seitenbetreiber erstellten Inhalte und Werke auf dieser Website unterliegen dem Urheberrecht. Eine Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechts bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers.</p>
+
+    <h3>Links & Verweise</h3>
+    <p>Diese Website enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich.</p>
+
+    <h3>Social Plugins</h3>
+    <p>Unsere Website kann Social Plugins von sozialen Netzwerken wie Facebook oder Instagram verwenden. Durch Interaktionen mit diesen Plugins können Daten an die Betreiber dieser Netzwerke übermittelt werden. Bitte informieren Sie sich in den Datenschutzrichtlinien der jeweiligen Anbieter.</p>
+
+    <h3>Google Analytics</h3>
+    <p>Diese Website benutzt Google Analytics, einen Webanalysedienst der Google Inc. ("Google"). Google Analytics verwendet sogenannte "Cookies". Die durch Cookies erzeugten Informationen über Ihre Nutzung dieser Website werden in der Regel an einen Server von Google in den USA übertragen und dort gespeichert.</p>
+    <p>Sie können die Speicherung der Cookies durch eine entsprechende Einstellung Ihrer Browser-Software verhindern. Weitere Informationen finden Sie in der Datenschutzerklärung von Google unter: <a href="https://policies.google.com/privacy" target="_blank">https://policies.google.com/privacy</a></p>
+
+    <h3>SSL-Verschlüsselung</h3>
+    <p>Diese Website nutzt eine SSL-Verschlüsselung, um die Sicherheit Ihrer Daten bei der Übertragung zu gewährleisten. Sie erkennen eine verschlüsselte Verbindung daran, dass die Adresszeile des Browsers mit "https://" beginnt und ein Schloss-Symbol angezeigt wird.</p>
+
+    <h4>1. Verantwortlicher</h4>
+    <p>Marijan Ristov<br>
+        Pingitzzerkai 6c, 5400 Hallein, Austria<br>
+        E-Mail: <a href="mailto:beschichtung.ristov@gmail.com">beschichtung.ristov@gmail.com</a></p>
+
+    <h4>2. Welche Daten werden erhoben?</h4>
+    <p>Über das Kontaktformular erfassen wir folgende Daten:</p>
+    <ul>
+        <li>Name und Nachname</li>
+        <li>Telefonnummer</li>
+        <li>E-Mail-Adresse</li>
+        <li>Titel und Betreff der Nachricht</li>
+    </ul>
+
+    <h4>3. Wofür werden die Daten verwendet?</h4>
+    <p>Die erhobenen Daten dienen ausschließlich dazu, Ihre Anfrage zu beantworten. Es erfolgt keine Weitergabe an Dritte.</p>
+
+    <h4>4. Wie lange werden die Daten gespeichert?</h4>
+    <p>Die Daten werden nur so lange gespeichert, wie es zur Bearbeitung Ihrer Anfrage erforderlich ist.</p>
+
+    <h4>5. Welche Rechte haben Sie?</h4>
+    <p>Sie haben das Recht auf Auskunft, Berichtigung und Löschung Ihrer personenbezogenen Daten. Bitte kontaktieren Sie uns unter
+        <a href="mailto:beschichtung.ristov@gmail.com">beschichtung.ristov@gmail.com</a>, falls Sie Fragen dazu haben.</p>
+
+    <h3>Cookies</h3>
+    <p>Unsere Website kann Cookies verwenden, um das Nutzungserlebnis zu verbessern. Sie haben die Möglichkeit, das Speichern von Cookies in Ihren Browsereinstellungen zu deaktivieren. Bitte beachten Sie, dass dies die Funktionalität der Website einschränken kann.</p>
+
+    <h3>Plattform zur Online-Streitbeilegung</h3>
+    <p>Verbraucher haben die Möglichkeit, Beschwerden an die Online-Streitbeilegungsplattform der EU zu richten: <a href="https://ec.europa.eu/consumers/odr" target="_blank">https://ec.europa.eu/consumers/odr</a>. Sie können Beschwerden auch direkt an uns unter der oben angegebenen E-Mail-Adresse richten.</p>
+
+    <h3>Berufsrechtliche Vorschriften</h3>
+    <p>Anwendbare gewerbe- oder berufsrechtliche Vorschriften: Gewerbeordnung 1994, abrufbar unter
+        <a href="https://www.ris.bka.gv.at" target="_blank">https://www.ris.bka.gv.at</a>.</p>
+
+</div>
+
+
+<!-- Футер -->
+<footer class="bg-dark text-white mt-5 p-4">
+    <div class="container">
+        <div class="row">
+            <!-- Google Maps -->
+            <div class="col-md-6">
+                <h5>Standort</h5>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2686.484821820289!2d13.10021299710676!3d47.67500374197447!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4776951da6a805c9%3A0x8681d79c9e97c367!2sPingitzzerkai%206c%2C%205400%20Hallein%2C%20Austria!5e0!3m2!1sen!2smk!4v1741143277680!5m2!1sen!2smk" width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+            <!-- Адреса и работно време -->
+            <div class="col-md-6">
+                <h5>Kontakt</h5>
+                <p><strong>Unternehmen: </strong>Marijan Ristov</p>
+                <p><strong>Adresse: </strong>Pingitzzerkai 6c, 5400 Hallein, Austria</p>
+                <p><strong>Tel: </strong><a href="tel:+436644125946">+43 664 4125946</a> </p>
+                <p><strong>E-Mail: </strong><a href="mailto:beschichtung.ristov@gmail.com">beschichtung.ristov@gmail.com</a></p>
+                <p><strong>Öffnungszeiten:</strong></p>
+                <ul class="list-unstyled">
+                    <li>Montag - Freitag: 07:00 - 18:00</li>
+                    <li>Samstag & Sonntag: Termine nach telefonischer Vereinbarung</li>
+                </ul>
+                <div>
+                    <h5>Info:</h5>
+                    <a href="{% url 'impressum' %}" class="btn btn-light">Impressum</a>
+                    <a href="{% url 'datenschutzerklarung' %}" class="btn btn-light">Datenschutzerklärung</a>
+                </div>
+            </div>
+        </div>
+    </div>
+   
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
