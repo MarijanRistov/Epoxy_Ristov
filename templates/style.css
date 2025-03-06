@@ -1,0 +1,179 @@
+  .carousel-caption {
+            top: 50%;
+            transform: translateY(-50%);
+        }
+        .btn-outline-light {
+            border-width: 2px;
+            font-size: 18px;
+        }
+
+         .carousel-item img {
+             height: 510px;
+             width: 100%;
+             object-fit: cover;
+         }
+
+  .bg-light a {
+      text-decoration: none;   /* Тргнува подцртувањето на линковите */
+  }
+
+  .bg-light a:hover {
+      text-decoration: underline;  /* Ако сакаш да се појави подцртување кога се поместува курсорот */
+  }
+
+  @media (max-width: 768px) {
+            .carousel-item img {
+                height: 300px;
+            }
+        }
+        .custom-container {
+            max-width: 1100px; /* Прилагоди ширина по потреба */
+            background-color: #f8f9fa; /* Светло сива позадина */
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Блага сенка */
+        }
+
+        /* Центрирање на главниот div */
+        .centered-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh; /* За вертикално центрирање */
+        }
+
+        /* Поставување на слики */
+        .content-box img {
+            width: 100%;
+            max-height: 300px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+
+        /* Текст стил */
+        .content-box p {
+            font-size: 18px;
+            color: #333;
+        }
+        .text-container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Сенка */
+        }
+
+        /* Глобален стил за текстот */
+        .text-container h2 {
+            font-size: 1.8rem; /* Малку помал шрифт */
+            color: #333;
+            margin-bottom: 20px; /* Простор помеѓу насловот и текстот */
+        }
+
+        .text-container p {
+            font-size: 1rem; /* Првиот параграф ќе има 1rem */
+            color: #333;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        /* Зелен стил за првиот параграф */
+        .text-container p.boja-text {
+            color: #7b7455; /* Зелена боја */
+            font-size: 1.0rem; /* Малку поголем од останатите */
+        }
+
+        /* Помал текст за понатамошниот опис */
+        .text-container p.small-text {
+            font-size: 1.0rem; /* Мал текст за понатамошниот опис */
+            color: #000000;
+        }
+        /* Стил за секцијата со 3 дела */
+        .three-columns {
+            max-width: 1100px;
+            margin: 40px auto;
+            display: flex;
+            justify-content: space-between;
+            text-align: center;
+            flex-wrap: wrap; /* Овозможи да се прилагодуваат елементите на мобилни уреди */
+        }
+
+        .three-columns .column {
+            flex: 1; /* Секој дел ќе биде еднакво широк */
+            padding: 20px;
+            background-color: #f1f1f1; /* Светла позадина */
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Блага сенка */
+            margin: 10px;
+        }
+
+        .three-columns .column h3 {
+            font-size: 1.5rem;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .three-columns .column p {
+            font-size: 1rem;
+            color: #555;
+            margin-bottom: 20px;
+        }
+
+        /* Стил за копчиња */
+        .three-columns .column .btn {
+            font-size: 1rem;
+            padding: 10px 20px;
+            color: #fff;
+            background-color: #28a745;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+
+        .three-columns .column .btn:hover {
+            background-color: #218838;
+        }
+
+        /* За мобилни уреди */
+        @media (max-width: 768px) {
+            .three-columns {
+                display: block; /* Колоните ќе бидат едно под друго на мобилни */
+            }
+
+            .three-columns .column {
+                width: 100%; /* Секој дел ќе биде со ширина од 100% */
+                margin-bottom: 20px; /* Простор помеѓу колоните */
+            }
+
+            .three-columns .column .btn {
+                width: 100%; /* Копчето ќе зазема цела ширина */
+                text-align: center; /* Центрирање на копчето */
+            }
+        }
+
+        /* Стил за текстот со линија */
+        .three-columns .column .line-text {
+            display: flex;
+            align-items: center;
+            justify-content: left;
+            margin-bottom: 20px;
+        }
+
+        .three-columns .column .line-text::before {
+            content: "";
+            flex-grow: 1;
+            height: 1px;
+            background-color: #28a745; /* Зелената линија */
+            margin-right: 10px;
+        }
+
+        .three-columns .column .line-text p {
+            margin: 0;
+            color: #555;
+            font-size: 1rem;
+        }
+
+        .navbar-brand img {
+        height: 50px; /* Прилагоди според потребата */
+            width: auto;
+}

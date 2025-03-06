@@ -1,0 +1,864 @@
+<!DOCTYPE html>
+<html lang="en">
+<!DOCTYPE html>
+<html lang="mk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bodenbeschichtungen</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="icon" href="/media/icons/logo.png" type="image/png" sizes="32x32">
+    <link rel="icon" href="/media/icons/logo-mobile.png" type="image/png" sizes="16x16">
+    <link rel="icon" href="/media/icons/logo-tablet.png" type="image/png" sizes="24x24">
+    
+<style>
+    .contact_kopce {
+        display: inline-block;        /* Прави копчето да биде inline блок */
+        background-color: #000000;    /* Црна позадинска боја */
+        color: #ffffff;               /* Бел текст */
+        font-size: 16px;              /* Поголем фонт */
+        padding: 12px 25px;           /* Поголемо внатрешно размакнување (повисоко копче) */
+        text-align: center;           /* Центрирање на текстот */
+        text-decoration: none;        /* Без подлинија */
+        border-radius: 5px;           /* Благи рабови за копчето */
+        transition: background-color 0.3s; /* Преубликување на позадината при hover */
+    }
+
+    .contact_kopce:hover {
+        background-color: #333333;    /* Темна црна боја при hover */
+    }
+
+    /* Постави фиксна висина и ширина за сликите во картите */
+    .card-img-top {
+        width: 100%;            /* Сликата ќе се растегне да ја пополни ширината на картата */
+        height: 200px;          /* Постави фиксна висина за сликите */
+        object-fit: cover;      /* Сликата ќе се прилагоди да го покрие целиот простор, иако може да биде исечена */
+        object-position: center; /* Центрира сликата така што најважниот дел ќе биде видлив */
+    }
+    .contact-info {
+        background-color: #f8f9fa;  /* Поставување светло сива позадина */
+        text-align: center;         /* Центрирање на текстот */
+        padding: 20px 0;            /* Поголемо внатрешно размакнување */
+        font-size: 16px;            /* Поголем фонт за подобар изглед */
+    }
+
+    .contact-info strong {
+        font-weight: bold;         /* Го прави текстот во strong потемен */
+        font-size: 18px;           /* Поголем текст за појасност */
+    }
+
+    .contact-link {
+        color: #007bff;            /* Постави сина боја за линковите */
+        text-decoration: none;     /* Отстрани поддршката за линковите */
+        font-weight: normal;       /* Намалувај го нагласувањето на линковите */
+    }
+
+    .contact-link:hover {
+        color: #0056b3;            /* Темна сина боја при hover */
+        text-decoration: underline; /* Додај подлинија при hover */
+    }
+    .carousel-caption {
+        top: 50%;
+        transform: translateY(-50%);
+    }
+    .btn-outline-light {
+        border-width: 2px;
+        font-size: 18px;
+    }
+
+    .carousel-item img {
+        height: 510px;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    .bg-light a {
+        text-decoration: none;   /* Тргнува подцртувањето на линковите */
+    }
+
+    .bg-light a:hover {
+        text-decoration: underline;  /* Ако сакаш да се појави подцртување кога се поместува курсорот */
+    }
+
+    @media (max-width: 768px) {
+        .carousel-item img {
+            height: 300px;
+        }
+    }
+    .custom-container {
+        max-width: 1100px; /* Прилагоди ширина по потреба */
+        background-color: #f8f9fa; /* Светло сива позадина */
+        padding: 40px;
+        border-radius: 10px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Блага сенка */
+    }
+
+    /* Центрирање на главниот div */
+    .centered-section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh; /* За вертикално центрирање */
+    }
+
+    /* Поставување на слики */
+    .content-box img {
+        width: 100%;
+        max-height: 300px;
+        object-fit: cover;
+        border-radius: 10px;
+    }
+
+    /* Текст стил */
+    .content-box p {
+        font-size: 18px;
+        color: #333;
+    }
+    .text-container {
+        max-width: 1100px;
+        margin: 40px auto;
+        padding: 30px;
+        text-align: center;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Сенка */
+    }
+
+    /* Глобален стил за текстот */
+    .text-container h2 {
+        font-size: 1.8rem; /* Малку помал шрифт */
+        color: #333;
+        margin-bottom: 20px; /* Простор помеѓу насловот и текстот */
+    }
+
+    .text-container p {
+        font-size: 1rem; /* Првиот параграф ќе има 1rem */
+        color: #333;
+        line-height: 1.6;
+        margin-bottom: 20px;
+    }
+
+    /* Зелен стил за првиот параграф */
+    .text-container p.boja-text {
+        color: #7b7455; /* Зелена боја */
+        font-size: 1.0rem; /* Малку поголем од останатите */
+    }
+
+    /* Помал текст за понатамошниот опис */
+    .text-container p.small-text {
+        font-size: 1.0rem; /* Мал текст за понатамошниот опис */
+        color: #000000;
+    }
+    /* Стил за секцијата со 3 дела */
+    .three-columns {
+        max-width: 1100px;
+        margin: 40px auto;
+        display: flex;
+        justify-content: space-between;
+        text-align: center;
+        flex-wrap: wrap; /* Овозможи да се прилагодуваат елементите на мобилни уреди */
+    }
+
+    .three-columns .column {
+        flex: 1; /* Секој дел ќе биде еднакво широк */
+        padding: 20px;
+        background-color: #f1f1f1; /* Светла позадина */
+        border-radius: 10px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Блага сенка */
+        margin: 10px;
+    }
+
+    .three-columns .column h3 {
+        font-size: 1.5rem;
+        color: #333;
+        margin-bottom: 20px;
+    }
+
+    .three-columns .column p {
+        font-size: 1rem;
+        color: #555;
+        margin-bottom: 20px;
+    }
+
+    /* Стил за копчиња */
+    .three-columns .column .btn {
+        font-size: 1rem;
+        padding: 10px 20px;
+        color: #fff;
+        background-color: #28a745;
+        border: none;
+        border-radius: 5px;
+        text-decoration: none;
+    }
+
+    .three-columns .column .btn:hover {
+        background-color: #218838;
+    }
+
+    /* За мобилни уреди */
+    @media (max-width: 768px) {
+        .three-columns {
+            display: block; /* Колоните ќе бидат едно под друго на мобилни */
+        }
+
+        .three-columns .column {
+            width: 100%; /* Секој дел ќе биде со ширина од 100% */
+            margin-bottom: 20px; /* Простор помеѓу колоните */
+        }
+
+        .three-columns .column .btn {
+            width: 100%; /* Копчето ќе зазема цела ширина */
+            text-align: center; /* Центрирање на копчето */
+        }
+    }
+
+    /* Стил за текстот со линија */
+    .three-columns .column .line-text {
+        display: flex;
+        align-items: center;
+        justify-content: left;
+        margin-bottom: 20px;
+    }
+
+    .three-columns .column .line-text::before {
+        content: "";
+        flex-grow: 1;
+        height: 1px;
+        background-color: #28a745; /* Зелената линија */
+        margin-right: 10px;
+    }
+
+    .three-columns .column .line-text p {
+        margin: 0;
+        color: #555;
+        font-size: 1rem;
+    }
+
+    .navbar-brand img {
+        height: 50px; /* Прилагоди според потребата */
+        width: auto;
+    }
+
+    /* Правоаголно копче со црна позадина */
+    .custom-btn {
+        width: 100%;  /* Ширина на копчето да биде 100% од ширината на родителот (во овој случај, картата) */
+        background-color: #000;  /* Црна позадина */
+        color: white;  /* Бела боја на текстот */
+        border: none;  /* Без граница */
+        padding: 10px;  /* Подебело пополнување околу текстот */
+        font-size: 16px;  /* Големина на текстот */
+        text-align: center;  /* Центрирање на текстот */
+        transition: background-color 0.3s ease;  /* Промена на бојата при прелетување */
+    }
+
+    /* Промена на бојата на копчето при прелетување */
+    .custom-btn:hover {
+        background-color: #333;  /* Темно сива позадина при прелетување */
+    }
+
+
+</style>
+</head>
+<body>
+
+<div class="bg-light text-center py-2">
+    <strong>Telefon:</strong> <a href="tel:+436644125946">+43 664 4125946</a>  | <strong>E-mail:</strong> <a href="mailto:beschichtung.ristov@gmail.com">beschichtung.ristov@gmail.com</a>
+</div>
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container">
+        <a class="navbar-brand" href="#">
+            <img src="../media/icons/logo.png" alt="Logo" height="50">
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="{% url 'home' %}">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'bodenbeschichtungen' %}">Bodenbeschichtungen</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'wandbeschichtungen' %}">Wandbeschichtungen</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'abdichtungen' %}">Abdichtungen</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'untergrundvorbereitung' %}">Untergrundvorbereitung</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'gallery' %}">Unsere Arbeiten</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'contact' %}">Anfrage</a></li>
+                <li class="nav-item"><a class="nav-link" href="{% url 'about_us' %}">Kontakt</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="container">
+    <div class="row">
+        <!-- Картичка 1 -->
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img class="card-img-top" src="../media/bodenbeschichtung/garagen.png" alt="Card image cap">
+                <div class="card-body">
+                    <p class="card-text">Garagenbeschichtung</p>
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal1">
+                        Mehr infos
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Картичка 2 -->
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img class="card-img-top" src="../media/bodenbeschichtung/industrien.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <p class="card-text">Industrieböden</p>
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal2">
+                        Mehr infos
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Картичка 3 -->
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img class="card-img-top" src="../media/bodenbeschichtung/terasse.jpeg" alt="Card image cap">
+                <div class="card-body">
+                    <p class="card-text">Terassen Beschichtung</p>
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal3">
+                        Mehr infos
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <!-- Картичка 4 -->
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img class="card-img-top" src="../media/bodenbeschichtung/wohnraum.avif" alt="Card image cap">
+                <div class="card-body">
+                    <p class="card-text">Wohnraum & Bad </p>
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal4">
+                        Mehr infos
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Картичка 5 -->
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img class="card-img-top" src="../media/bodenbeschichtung/kuchen.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <p class="card-text">Küche</p>
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal5">
+                        Mehr infos
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Картичка 6 -->
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img class="card-img-top" src="../media/bodenbeschichtung/tierstall.webp" alt="Card image cap">
+                <div class="card-body">
+                    <p class="card-text">Tierstallbeschichtung</p>
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal6">
+                        Mehr infos
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <!-- Картичка 7 -->
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img class="card-img-top" src="../media/bodenbeschichtung/lebens.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <p class="card-text">Lebensmittelindustrie Beschichtung</p>
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal7">
+                        Mehr infos
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Картичка 8 -->
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img class="card-img-top" src="../media/bodenbeschichtung/stuffen.JPG" alt="Card image cap">
+                <div class="card-body">
+                    <p class="card-text">Treppen und Stufen</p>
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal8">
+                        Mehr infos
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Картичка 9 -->
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img class="card-img-top" src="../media/bodenbeschichtung/design.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <p class="card-text">Designböden</p>
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal9">
+                        Mehr infos
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <!-- Картичка 7 -->
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img class="card-img-top" src="../media/bodenbeschichtung/Steinteppiche.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <p class="card-text">Steinteppiche</p>
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal10">
+                        Mehr infos
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img class="card-img-top" src="../media/bodenbeschichtung/tiefgaragen.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <p class="card-text">Tiefgaragen</p>
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal11">
+                        Mehr infos
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <img class="card-img-top" src="../media/bodenbeschichtung/pool.jpeg" alt="Card image cap">
+                <div class="card-body">
+                    <p class="card-text">Poolbeschichtung</p>
+                    <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal12">
+                        Mehr infos
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Модали за секоја картичка -->
+<div class="modal fade" id="modal1" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Garagenbeschichtung</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <h5>Warum ist eine Garagenbeschichtung wichtig?</h5>
+                <p>Eine Garagenbeschichtung ist aus mehreren Gründen vorteilhaft und schützt nicht nur den Boden, sondern verbessert auch die Nutzung und das Aussehen der Garage. Die wichtigsten Vorteile sind:</p>
+
+                <ul>
+                    <li><strong>Schutz vor Abnutzung:</strong> Der Garagenboden ist häufig Belastungen wie schweren Fahrzeugen, Maschinen, Ölen, Chemikalien und Stößen ausgesetzt. Eine Beschichtung schützt den Boden vor Abnutzung und sorgt dafür, dass er länger haltbar bleibt.</li>
+                    <li><strong>Erhöhte Hygiene und Sauberkeit:</strong> Beschichtete Böden sind glatt und porenfrei, was das Ansammeln von Schmutz, Staub und Flüssigkeiten verringert. Dadurch lässt sich der Boden leichter reinigen.</li>
+                    <li><strong>Schutz vor Feuchtigkeit und Rost:</strong> Eine Beschichtung hilft, Feuchtigkeit abzuhalten, und schützt so vor Rost und Korrosion, besonders wenn in der Garage Fahrzeuge abgestellt werden.</li>
+                    <li><strong>Verbesserte Sicherheit:</strong> Eine Garagenbeschichtung kann rutschhemmend sein, was das Risiko von Unfällen verringert.</li>
+                    <li><strong>Bessere Optik:</strong> Sie kaschiert Risse und Unebenheiten im Boden und sorgt für eine ansprechendere Optik.</li>
+                    <li><strong>Schutz vor chemischen Substanzen:</strong> Eine Beschichtung schützt den Boden vor den schädlichen Auswirkungen von Öl, Benzin, Reinigungsmitteln oder Lösungsmitteln.</li>
+                    <li><strong>Längere Lebensdauer:</strong> Indem eine Beschichtung den Boden schützt und pflegt, verlängert sie seine Lebensdauer.</li>
+                </ul>
+
+                <p><strong>Fazit:</strong> Eine Garagenbeschichtung trägt dazu bei, die Garage funktionaler, sicherer, hygienischer und optisch ansprechender zu machen.</p>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Schließen</button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="modal2" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Industrieböden</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <h5>Warum sind Industrieböden wichtig?</h5>
+                <p>Industrieböden müssen extremen Belastungen standhalten und sind ein entscheidender Faktor für Sicherheit, Hygiene und Effizienz in verschiedenen Industriebereichen. Hier sind einige der wichtigsten Vorteile:</p>
+
+                <ul>
+                    <li><strong>Hohe Belastbarkeit:</strong> Industrieböden sind für schwere Maschinen, Fahrzeuge und hohe mechanische Belastungen ausgelegt.</li>
+                    <li><strong>Widerstandsfähigkeit gegen Chemikalien:</strong> Sie sind beständig gegen aggressive Chemikalien, Öle und Säuren, die in Produktionsstätten oft vorkommen.</li>
+                    <li><strong>Hygiene und einfache Reinigung:</strong> Glatte, fugenlose Oberflächen verhindern das Eindringen von Schmutz und Bakterien und erleichtern die Reinigung.</li>
+                    <li><strong>Rutschfestigkeit:</strong> Spezielle Beschichtungen sorgen für mehr Sicherheit und reduzieren das Unfallrisiko.</li>
+                    <li><strong>Langlebigkeit:</strong> Industrieböden sind so konzipiert, dass sie jahrelang ohne größere Wartung genutzt werden können.</li>
+                    <li><strong>Wirtschaftlichkeit:</strong> Durch ihre Haltbarkeit und niedrigen Wartungskosten sind sie eine langfristig wirtschaftliche Lösung.</li>
+                    <li><strong>Optische Anpassungsfähigkeit:</strong> Verschiedene Farben und Markierungen können für eine klare Strukturierung von Arbeitsbereichen sorgen.</li>
+                </ul>
+
+                <p><strong>Fazit:</strong> Industrieböden sind eine zuverlässige und langlebige Lösung für Produktionshallen, Lagerhäuser und andere industrielle Einrichtungen.</p>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Schließen</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modal4" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Wohnraum- und Badbeschichtung</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <h5>Warum ist eine Bodenbeschichtung in Wohnräumen und Bädern sinnvoll?</h5>
+                <p>Eine spezielle Bodenbeschichtung für Wohnräume und Bäder bietet zahlreiche Vorteile, sowohl in funktionaler als auch in ästhetischer Hinsicht. Die wichtigsten Vorteile sind:</p>
+
+                <ul>
+                    <li><strong>Hygienisch und pflegeleicht:</strong> Die glatte, porenfreie Oberfläche verhindert das Eindringen von Schmutz und Feuchtigkeit und ist leicht zu reinigen.</li>
+                    <li><strong>Wasser- und feuchtigkeitsbeständig:</strong> Besonders im Badbereich schützt eine Beschichtung den Boden vor Wasserschäden, Schimmel und Feuchtigkeit.</li>
+                    <li><strong>Rutschfestigkeit:</strong> Spezielle Beschichtungen bieten rutschhemmende Eigenschaften, die das Risiko von Unfällen reduzieren.</li>
+                    <li><strong>Modernes und stilvolles Design:</strong> Eine Bodenbeschichtung verleiht dem Raum ein minimalistisches, nahtloses und modernes Aussehen.</li>
+                    <li><strong>Komfort und Wärme:</strong> Die Beschichtung kann mit einer Fußbodenheizung kombiniert werden, um den Wohnkomfort zu erhöhen.</li>
+                    <li><strong>Widerstandsfähig gegen Chemikalien und Haushaltsreiniger:</strong> Schutz vor aggressiven Reinigungsmitteln und alltäglichen Verschmutzungen.</li>
+                    <li><strong>Langlebig und robust:</strong> Hohe Widerstandsfähigkeit gegen Abnutzung, Kratzer und Flecken.</li>
+                </ul>
+
+                <p><strong>Fazit:</strong> Eine Wohnraum- und Badbeschichtung sorgt für ein hygienisches, modernes und langlebiges Bodensystem, das sowohl funktional als auch optisch überzeugt.</p>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Schließen</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modal5" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Küchenbodenbeschichtung</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <h5>Warum ist eine Bodenbeschichtung in der Küche sinnvoll?</h5>
+                <p>Eine hochwertige Bodenbeschichtung für Küchen bietet zahlreiche Vorteile, die sowohl die Hygiene als auch die Langlebigkeit des Bodens verbessern. Die wichtigsten Vorteile sind:</p>
+
+                <ul>
+                    <li><strong>Hygienisch und leicht zu reinigen:</strong> Die fugenlose, porenfreie Oberfläche verhindert das Eindringen von Bakterien, Feuchtigkeit und Schmutz, wodurch der Boden besonders pflegeleicht ist.</li>
+                    <li><strong>Wasser- und fleckenresistent:</strong> Schutz gegen Wasser, Öle, Fette und andere Flüssigkeiten, die häufig in der Küche vorkommen.</li>
+                    <li><strong>Rutschhemmend:</strong> Spezielle Beschichtungen bieten rutschfeste Eigenschaften und sorgen für mehr Sicherheit beim Kochen und Arbeiten.</li>
+                    <li><strong>Hohe Belastbarkeit:</strong> Der Boden hält schweren Küchenmöbeln, Geräten und hoher Beanspruchung stand.</li>
+                    <li><strong>Resistent gegen Chemikalien und Reinigungsmittel:</strong> Schutz vor aggressiven Reinigungsmitteln und Lebensmittelflecken.</li>
+                    <li><strong>Modernes und ästhetisches Design:</strong> Eine nahtlose Beschichtung sorgt für ein elegantes und zeitloses Aussehen.</li>
+                    <li><strong>Kompatibel mit Fußbodenheizung:</strong> Die Beschichtung kann mit einer Fußbodenheizung kombiniert werden, um zusätzlichen Komfort zu bieten.</li>
+                </ul>
+
+                <p><strong>Fazit:</strong> Eine Küchenbodenbeschichtung bietet eine hygienische, sichere und langlebige Lösung, die sowohl funktionale als auch optische Vorteile hat.</p>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Schließen</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modal6" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Tierstallbeschichtung</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <h5>Warum ist eine Tierstallbeschichtung wichtig?</h5>
+                <p>Eine professionelle Bodenbeschichtung für Tierställe ist unverzichtbar, um sowohl die Hygiene als auch die Langlebigkeit des Bodens zu gewährleisten. Hier sind die wichtigsten Vorteile:</p>
+
+                <ul>
+                    <li><strong>Robust und strapazierfähig:</strong> Tierställe sind häufig stark beansprucht, sei es durch Tiere, Maschinen oder regelmäßige Reinigung. Eine Bodenbeschichtung schützt den Boden vor Abnutzung und verlängert seine Lebensdauer.</li>
+                    <li><strong>Hygienisch und pflegeleicht:</strong> Die fugenlose Oberfläche verhindert das Eindringen von Bakterien und erleichtert die Reinigung erheblich, was für die Gesundheit der Tiere wichtig ist.</li>
+                    <li><strong>Rutschfestigkeit:</strong> Eine rutschhemmende Beschichtung sorgt für Sicherheit der Tiere, insbesondere bei Nässe oder verschmutzten Böden.</li>
+                    <li><strong>Wasser- und geruchsresistent:</strong> Beschichtete Böden verhindern das Eindringen von Feuchtigkeit, was die Bildung von Schimmel oder unangenehmen Gerüchen vermeidet.</li>
+                    <li><strong>Beständig gegen tierische Abfälle:</strong> Die Beschichtung schützt vor den schädlichen Auswirkungen von Urin, Kot und anderen tierischen Abfällen, die den Boden langfristig beschädigen könnten.</li>
+                    <li><strong>Umweltfreundlich:</strong> Viele Bodenbeschichtungen für Tierställe sind umweltfreundlich und emissionsfrei, was eine gesunde Umgebung für Tiere und Menschen schafft.</li>
+                </ul>
+
+                <p><strong>Fazit:</strong> Eine Tierstallbeschichtung sorgt für einen sicheren, hygienischen und langlebigen Boden, der den Anforderungen eines Tierstalls gerecht wird und gleichzeitig die Arbeitsbedingungen verbessert.</p>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Schließen</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="modal7" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Lebensmittelindustrie Bodenbeschichtung</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <h5>Warum ist eine Bodenbeschichtung in der Lebensmittelindustrie wichtig?</h5>
+                <p>In der Lebensmittelindustrie ist die Wahl des richtigen Bodenbelags von entscheidender Bedeutung, um sowohl die Sicherheit der Produkte als auch die hygienischen Standards zu gewährleisten. Die wichtigsten Vorteile einer Bodenbeschichtung in der Lebensmittelindustrie sind:</p>
+
+                <ul>
+                    <li><strong>Hygiene und Reinigung:</strong> Der Boden muss leicht zu reinigen und resistent gegen Feuchtigkeit und Flecken sein, um die hohen Hygienestandards in der Lebensmittelverarbeitung zu erfüllen. Beschichtete Böden verhindern das Ansammeln von Schmutz und Mikroben.</li>
+                    <li><strong>Rutschfestigkeit:</strong> In der Lebensmittelproduktion entstehen häufig Nässe und Öle, was zu rutschigen Oberflächen führen kann. Eine rutschhemmende Beschichtung sorgt für die Sicherheit der Mitarbeiter.</li>
+                    <li><strong>Beständigkeit gegen aggressive Substanzen:</strong> Lebensmittelproduktionseinrichtungen sind oft mit aggressiven Reinigungsmitteln und chemischen Substanzen konfrontiert. Eine robuste Bodenbeschichtung schützt den Boden vor Schäden durch diese Substanzen.</li>
+                    <li><strong>Langlebigkeit:</strong> Eine qualitativ hochwertige Bodenbeschichtung sorgt dafür, dass der Boden über viele Jahre hinweg stabil bleibt, selbst bei intensiver Nutzung und ständigem Kontakt mit Feuchtigkeit und Chemikalien.</li>
+                    <li><strong>Widerstand gegen Temperaturschwankungen:</strong> In der Lebensmittelindustrie sind starke Temperaturschwankungen üblich. Eine Bodenbeschichtung schützt vor Rissen und anderen Schäden, die durch diese Temperaturveränderungen verursacht werden könnten.</li>
+                    <li><strong>Compliance mit Vorschriften:</strong> Der Bodenbelag in der Lebensmittelindustrie muss strenge behördliche Anforderungen und Normen erfüllen. Eine professionelle Bodenbeschichtung sorgt für die Einhaltung dieser Vorschriften.</li>
+                </ul>
+
+                <p><strong>Fazit:</strong> Eine hochwertige Bodenbeschichtung trägt dazu bei, die Hygiene, Sicherheit und Langlebigkeit der Bodenflächen in der Lebensmittelindustrie zu gewährleisten und erfüllt gleichzeitig alle rechtlichen Anforderungen.</p>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Schließen</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modal8" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Treppen und Stufen Bodenbeschichtung</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <h5>Warum ist eine Bodenbeschichtung für Treppen und Stufen wichtig?</h5>
+                <p>Treppen und Stufen sind stark beanspruchte Bereiche in jedem Gebäude. Die Wahl einer geeigneten Bodenbeschichtung für diese Flächen kann die Sicherheit erhöhen und die Lebensdauer der Stufen verlängern. Die wichtigsten Vorteile einer Bodenbeschichtung für Treppen und Stufen sind:</p>
+
+                <ul>
+                    <li><strong>Rutschfestigkeit:</strong> Besonders auf Treppen und Stufen ist Rutschfestigkeit entscheidend, um Unfälle zu vermeiden. Eine speziell entwickelte Beschichtung sorgt für sicheren Halt, selbst bei Nässe oder Ölspuren.</li>
+                    <li><strong>Langlebigkeit und Widerstandsfähigkeit:</strong> Treppen und Stufen sind stark belastet, weshalb eine widerstandsfähige Bodenbeschichtung notwendig ist, um die Flächen vor Abnutzung und Beschädigungen zu schützen.</li>
+                    <li><strong>Vielseitigkeit:</strong> Eine Beschichtung für Treppen und Stufen kann in verschiedenen Bereichen eingesetzt werden, sei es in öffentlichen Gebäuden, Bürogebäuden oder auch im privaten Bereich. Sie ist anpassbar an unterschiedliche Anforderungen und Bedürfnisse.</li>
+                    <li><strong>Optische Verbesserung:</strong> Eine gut ausgewählte Bodenbeschichtung kann das Erscheinungsbild von Treppen und Stufen verbessern, indem sie das Design modernisiert und Unregelmäßigkeiten kaschiert.</li>
+                    <li><strong>Widerstand gegen chemische Substanzen:</strong> Besonders in gewerblichen oder industriellen Umgebungen sind Treppen und Stufen häufig mit Chemikalien oder Reinigungsmitteln in Kontakt. Eine robuste Beschichtung schützt vor den schädlichen Auswirkungen dieser Substanzen.</li>
+                    <li><strong>Einfache Pflege:</strong> Bodenbeschichtungen für Treppen und Stufen sind einfach zu reinigen und pflegen, was dazu beiträgt, dass sie hygienisch und ästhetisch ansprechend bleiben.</li>
+                </ul>
+
+                <p><strong>Fazit:</strong> Eine Bodenbeschichtung für Treppen und Stufen bietet nicht nur eine erhöhte Sicherheit, sondern sorgt auch für eine längere Lebensdauer und ein ansprechendes Design dieser stark genutzten Flächen.</p>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Schließen</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- Додади уште 8 модала (modal2 до modal9) според истиот шаблон -->
+
+
+<div class="container text-container">
+    <h2>Epoxy Ristov Bodenbeschichtung</h2>
+    <p class="small-text"><strong>Wenn Sie Fragen zur Bodenbeschichtung haben, stellen Sie uns bitte Ihre Anfrage und wir werden Ihnen so schnell wie möglich per E-Mail antworten.</strong></p>
+    <a class="contact_kopce" href="{% url 'contact' %}">Jetzt Kontaktieren</a>
+</div>
+
+
+<div class="modal fade" id="modal3" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Terrassenbeschichtung</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <h5>Warum ist eine Terrassenbeschichtung wichtig?</h5>
+                <p>Eine Terrassenbeschichtung schützt die Oberfläche vor Witterungseinflüssen und sorgt für eine langlebige und ästhetische Gestaltung. Die wichtigsten Vorteile sind:</p>
+
+                <ul>
+                    <li><strong>Wetterbeständigkeit:</strong> Schützt vor Regen, UV-Strahlung, Schnee und Frost, um Schäden durch Feuchtigkeit und Temperaturschwankungen zu vermeiden.</li>
+                    <li><strong>Rutschfestigkeit:</strong> Spezielle Beschichtungen verhindern ein Ausrutschen, insbesondere bei nasser Witterung.</li>
+                    <li><strong>Langlebigkeit:</strong> Eine hochwertige Beschichtung verlängert die Lebensdauer der Terrasse und verhindert Risse oder Abplatzungen.</li>
+                    <li><strong>Schutz vor Moos und Algen:</strong> Verhindert das Wachstum von Moos und Algen, was die Reinigung erleichtert.</li>
+                    <li><strong>Ästhetische Aufwertung:</strong> Durch verschiedene Farben und Oberflächenstrukturen kann das Erscheinungsbild individuell angepasst werden.</li>
+                    <li><strong>Einfache Reinigung und Pflege:</strong> Eine versiegelte Oberfläche nimmt weniger Schmutz auf und lässt sich leichter reinigen.</li>
+                    <li><strong>Schutz vor chemischen Substanzen:</strong> Widerstandsfähig gegen Haushaltschemikalien, Öle und andere Substanzen.</li>
+                </ul>
+
+                <p><strong>Fazit:</strong> Eine Terrassenbeschichtung erhöht die Sicherheit, verbessert das Aussehen und schützt die Terrasse vor Umwelteinflüssen.</p>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Schließen</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modal9" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Designboden</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <h5>Warum Designböden die perfekte Wahl für Ihr Zuhause sind</h5>
+                <p>Designböden sind mehr als nur funktionale Oberflächen – sie sind eine wichtige Komponente für die Ästhetik und den Stil Ihres Raumes. Sie bieten eine perfekte Kombination aus Qualität, Haltbarkeit und eleganter Optik. Die wichtigsten Vorteile eines Designbodens sind:</p>
+
+                <ul>
+                    <li><strong>Vielseitige Designs:</strong> Mit Designböden können Sie nahezu jeden gewünschten Look erzielen – von edlem Holzoptik über moderne Stein- oder Betonoptik bis hin zu kreativen Mustern. So können Sie Ihre Räume nach Ihrem eigenen Stil gestalten.</li>
+                    <li><strong>Hochwertige Materialien:</strong> Designböden bestehen aus robusten, strapazierfähigen Materialien, die gleichzeitig eine angenehme Haptik bieten. Sie sind pflegeleicht und widerstandsfähig gegenüber Abnutzung und Flecken.</li>
+                    <li><strong>Ästhetische Vielfalt:</strong> Ob minimalistisches Design, klassische Eleganz oder kreative Akzente – Designböden passen sich jedem Stil an und schaffen eine harmonische Atmosphäre. Ihre große Auswahl an Farben und Texturen lässt sich perfekt in jedes Raumkonzept integrieren.</li>
+                    <li><strong>Komfort und Funktionalität:</strong> Designböden bieten nicht nur eine optische Aufwertung, sondern auch ein hohes Maß an Komfort. Sie sind rutschfest, isolierend und bieten eine angenehme Wärme, wodurch sie besonders in Wohnräumen und im Wellnessbereich beliebt sind.</li>
+                    <li><strong>Widerstandsfähigkeit und Pflegeleichtigkeit:</strong> Dank spezieller Beschichtungen sind Designböden besonders resistent gegen Kratzer, Feuchtigkeit und Flecken. Sie sind einfach zu reinigen und behalten über Jahre hinweg ihre Optik.</li>
+                    <li><strong>Umweltfreundlichkeit:</strong> Viele Designböden sind nachhaltig produziert und umweltfreundlich. Sie tragen zu einer besseren Raumluft bei und enthalten keine schädlichen Chemikalien.</li>
+                </ul>
+
+                <p><strong>Fazit:</strong> Designböden bieten nicht nur ein elegantes und modernes Aussehen, sondern auch praktische Vorteile wie Widerstandsfähigkeit, Komfort und einfache Pflege. Sie sind die ideale Wahl für jedes moderne Zuhause, das Wert auf Qualität und Stil legt.</p>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Schließen</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="modal fade" id="modal10" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Steinteppiche</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <h5>Warum Steinteppiche die perfekte Wahl für Ihre Räume sind</h5>
+                <p>Steinteppiche sind eine elegante und nachhaltige Bodenlösung, die nicht nur durch ihre Optik überzeugt, sondern auch durch ihre außergewöhnliche Haltbarkeit und pflegeleichten Eigenschaften. Diese Bodenbeläge bestehen aus natürlichen Steinen und Kunstharz, die miteinander kombiniert werden, um einen strapazierfähigen, aber gleichzeitig ästhetisch ansprechenden Belag zu schaffen. Die wichtigsten Vorteile von Steinteppichen sind:</p>
+
+                <ul>
+                    <li><strong>Einzigartige Optik:</strong> Steinteppiche bieten eine unverwechselbare, natürliche Optik, die jedem Raum eine besondere Atmosphäre verleiht. Sie sind in verschiedenen Farben, Formen und Texturen erhältlich und können an Ihre individuellen Wünsche angepasst werden.</li>
+                    <li><strong>Robustheit und Langlebigkeit:</strong> Diese Bodenbeläge sind extrem widerstandsfähig gegenüber Abrieb, Stößen und Feuchtigkeit. Sie sind ideal für stark frequentierte Bereiche, sowohl im Innen- als auch im Außenbereich.</li>
+                    <li><strong>Vielseitigkeit:</strong> Steinteppiche sind für eine Vielzahl von Anwendungen geeignet, vom Wohnzimmer und der Terrasse bis hin zu Badezimmern und Treppen. Sie können sowohl im Innenbereich als auch für Außenflächen verwendet werden, wie z.B. Gehwege, Terrassen und Poolbereiche.</li>
+                    <li><strong>Wasserbeständigkeit:</strong> Dank ihrer wasserabweisenden Eigenschaften sind Steinteppiche auch in feuchten Umgebungen wie Badezimmern oder an Poolbereichen hervorragend geeignet. Sie verhindern das Eindringen von Feuchtigkeit und schützen so vor Schimmelbildung und Schäden.</li>
+                    <li><strong>Pflegeleicht:</strong> Steinteppiche sind besonders pflegeleicht. Sie benötigen nur wenig Wartung und sind resistent gegen Flecken und Schmutz. Mit einer regelmäßigen Reinigung behalten sie ihre Schönheit und Funktionalität über Jahre hinweg.</li>
+                    <li><strong>Umweltfreundlichkeit:</strong> Da Steinteppiche aus natürlichen Materialien hergestellt werden, sind sie eine umweltfreundliche Wahl für Ihr Zuhause oder gewerbliche Projekte. Sie tragen zu einer besseren Raumluft bei und sind frei von schädlichen Chemikalien.</li>
+                </ul>
+
+                <p><strong>Fazit:</strong> Steinteppiche bieten eine perfekte Kombination aus Schönheit, Haltbarkeit und Funktionalität. Mit ihren einzigartigen Designmöglichkeiten und praktischen Vorteilen sind sie die ideale Wahl für moderne, anspruchsvolle Raumgestaltungen.</p>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Schließen</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modal11" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Tiefgaragen Bodenbeschichtung</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <h5>Warum ist eine Bodenbeschichtung für Tiefgaragen wichtig?</h5>
+                <p>Die Bodenbeschichtung für Tiefgaragen spielt eine entscheidende Rolle, wenn es darum geht, den Boden langfristig zu schützen und eine sichere, pflegeleichte Umgebung zu gewährleisten. Diese speziellen Bodenbeläge sind so konzipiert, dass sie den extremen Belastungen und den verschiedenen Herausforderungen in einer Tiefgarage standhalten. Die Vorteile einer Bodenbeschichtung für Tiefgaragen umfassen:</p>
+
+                <ul>
+                    <li><strong>Schutz vor starker Belastung:</strong> Tiefgaragen sind oft ständigen Belastungen durch Fahrzeuge, Maschinen, Reifenabdrücke und Öl- oder Benzinverschüttungen ausgesetzt. Eine spezielle Bodenbeschichtung schützt den Boden vor diesen schädlichen Einflüssen und verlängert die Lebensdauer des Belags erheblich.</li>
+                    <li><strong>Feuchtigkeitsbeständigkeit:</strong> Die Beschichtung schützt vor Feuchtigkeit und verhindert, dass Wasser in den Boden eindringt, was insbesondere in Tiefgaragen von großer Bedeutung ist, da dort häufig hohe Luftfeuchtigkeit und Nässe auftreten können.</li>
+                    <li><strong>Rutschhemmende Eigenschaften:</strong> Eine der wichtigsten Eigenschaften von Bodenbeschichtungen für Tiefgaragen ist die Verbesserung der Rutschfestigkeit. Diese Eigenschaften sind besonders wichtig, um Unfälle zu vermeiden, besonders bei nassen oder verschmutzten Böden.</li>
+                    <li><strong>Leichte Reinigung und Pflege:</strong> Bodenbeläge in Tiefgaragen müssen regelmäßig gereinigt werden, um Schmutz, Öl und andere Rückstände zu entfernen. Eine Bodenbeschichtung bietet eine glatte und nicht poröse Oberfläche, die leicht zu reinigen ist und somit den Wartungsaufwand reduziert.</li>
+                    <li><strong>Ästhetische Verbesserung:</strong> Neben der Funktionalität kann eine Bodenbeschichtung das Erscheinungsbild der Tiefgarage erheblich verbessern, indem sie eine einheitliche, saubere und ordentliche Oberfläche bietet.</li>
+                    <li><strong>Beständigkeit gegenüber Chemikalien:</strong> Bodenbeschichtungen für Tiefgaragen sind oft beständig gegen verschiedene Chemikalien wie Öl, Benzin und Reinigungsmittel, was die Lebensdauer des Bodens und die Sicherheit in der Garage erhöht.</li>
+                </ul>
+
+                <p><strong>Fazit:</strong> Eine Bodenbeschichtung für Tiefgaragen bietet eine Reihe von Vorteilen, von der hohen Belastbarkeit bis hin zur verbesserten Sicherheit und einfacher Pflege. Sie ist eine wichtige Investition, um den Boden Ihrer Tiefgarage zu schützen und die Langlebigkeit des Belags zu gewährleisten.</p>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Schließen</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade" id="modal12" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Poolbeschichtung</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+            <div class="modal-body">
+                <h5>Warum ist eine Poolbeschichtung wichtig?</h5>
+                <p>Eine Poolbeschichtung bietet nicht nur eine ästhetische Verbesserung, sondern auch zahlreiche praktische Vorteile. Sie schützt den Pool vor Abnutzung und äußeren Einflüssen und sorgt dafür, dass er lange funktional und attraktiv bleibt. Die wichtigsten Vorteile einer Poolbeschichtung sind:</p>
+
+                <ul>
+                    <li><strong>Schutz vor Chemikalien:</strong> Poolwasser enthält oft Chemikalien wie Chlor und andere Zusätze. Eine Beschichtung schützt den Pool vor den schädlichen Auswirkungen dieser Substanzen und verhindert, dass sie in das Mauerwerk eindringen.</li>
+                    <li><strong>Wasserfestigkeit:</strong> Eine gute Poolbeschichtung sorgt für eine perfekte Abdichtung, sodass kein Wasser durch Risse oder Spalten entweicht und die Struktur des Pools nicht beschädigt wird.</li>
+                    <li><strong>Verbesserte Hygiene:</strong> Beschichtete Oberflächen sind glatt und leichter zu reinigen. Dadurch wird das Wachstum von Algen und Schimmel reduziert, was die Hygiene des Pools verbessert.</li>
+                    <li><strong>Witterungsbeständigkeit:</strong> Poolbeschichtungen schützen vor den Auswirkungen von UV-Strahlen und Wettereinflüssen und verhindern, dass die Pooloberfläche durch die Sonne verblasst oder Risse bekommt.</li>
+                    <li><strong>Ästhetische Verbesserungen:</strong> Eine neue Beschichtung kann das Aussehen des Pools erheblich verbessern und ihm ein frisches, sauberes und modernes Aussehen verleihen.</li>
+                    <li><strong>Längere Lebensdauer:</strong> Eine qualitativ hochwertige Poolbeschichtung verlängert die Lebensdauer des Pools, indem sie die Oberfläche schützt und pflegt.</li>
+                </ul>
+
+                <p><strong>Fazit:</strong> Eine Poolbeschichtung ist eine ausgezeichnete Wahl, um die Funktionalität und das Aussehen Ihres Pools zu verbessern und ihn für viele Jahre in einwandfreiem Zustand zu halten.</p>
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Schließen</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- Футер -->
+<footer class="bg-dark text-white mt-5 p-4">
+    <div class="container">
+        <div class="row">
+            <!-- Google Maps -->
+            <div class="col-md-6">
+                <h5>Standort</h5>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2686.484821820289!2d13.10021299710676!3d47.67500374197447!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4776951da6a805c9%3A0x8681d79c9e97c367!2sPingitzzerkai%206c%2C%205400%20Hallein%2C%20Austria!5e0!3m2!1sen!2smk!4v1741143277680!5m2!1sen!2smk" width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+            <!-- Адреса и работно време -->
+            <div class="col-md-6">
+                <h5>Kontakt</h5>
+                <p><strong>Unternehmen: </strong>Marijan Ristov</p>
+                <p><strong>Adresse: </strong>Pingitzzerkai 6c, 5400 Hallein, Austria</p>
+                <p><strong>Tel: </strong><a href="tel:+436644125946">+43 664 4125946</a> </p>
+                <p><strong>E-Mail: </strong><a href="mailto:beschichtung.ristov@gmail.com">beschichtung.ristov@gmail.com</a></p>
+                <p><strong>Öffnungszeiten:</strong></p>
+                <ul class="list-unstyled">
+                    <li>Montag - Freitag: 07:00 - 18:00</li>
+                    <li>Samstag & Sonntag: Termine nach telefonischer Vereinbarung</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+</body>
+</html>
