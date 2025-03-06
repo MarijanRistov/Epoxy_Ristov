@@ -75,6 +75,8 @@
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Сенка */
         }
 
+      
+
         /* Глобален стил за текстот */
         .text-container h2 {
             font-size: 1.8rem; /* Малку помал шрифт */
@@ -255,8 +257,8 @@
 
 
 <div class="container text-container">
-    <h2>Epoxy Ristov Bodenbeschichtung</h2>
-    <p class="boja-text"><strong>Willkommen bei Epoxy Ristov Bodenbeschichtung, Ihrem Experten für hochwertige Epoxidharzbeschichtungen!
+    <h2>Epoxy Ristov Beschichtung & Abdichtung</h2>
+    <p class="boja-text"><strong>Willkommen bei Epoxy Ristov Beschichtung  & Abdichtung, Ihrem Experten in raum Salzburg für hochwertige Epoxidharzbeschichtungen!
         Wir bieten Ihnen maßgeschneiderte Lösungen für gewerbliche, industrielle und private Anwendungen.
         Unsere Epoxidharzbeschichtungen bieten nicht nur eine hervorragende Haltbarkeit,
         sondern auch eine ästhetisch ansprechende Oberfläche, die den Anforderungen auch in anspruchsvollsten Umgebungen gerecht wird.</strong></p>
@@ -268,11 +270,43 @@
         Wir freuen uns darauf, Sie bei Ihrem nächsten Projekt zu unterstützen!</p>
 </div>
 
+<div class="centered-section">
+    <div class="container custom-container">
+
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <p>Epoxidharz ist ein vielseitiges, härtbares Kunstharz, das aus Polymeren besteht. Durch die richtige Zusammensetzung und den Zusatz von Härtern entsteht eine zähe Flüssigkeit, die sich optimal verarbeiten lässt. Aufgrund ihrer hervorragenden Haftung, hohen Festigkeit und absoluten Wasserbeständigkeit wurden Epoxidharz-Bodenbeschichtungen ursprünglich vor allem im Industriebereich eingesetzt. Heute finden sie auf zahlreichen Untergründen Anwendung – von Garagen, Hallen und Großküchen über Werkstätten, Waschräume und Büros bis hin zu Schwimmbädern, Terrassen, Balkonen und Wohnräumen. Unser Team von Vepoxy steht dir jederzeit für Fragen rund um Bodenbeschichtungen zur Verfügung. Kontaktiere uns und vereinbare einen Termin für ein unverbindliches Beratungsgespräch – wir freuen uns auf deine Anfrage!</p>
+                <a href="{% url 'contact' %}" class="btn btn-primary">Zur Kontaktseite</a>
+            </div>
+            <div class="col-md-6 content-box">
+                <h2>Das Material überzeugt durch zahlreiche Vorteile:</h2>
+                <ul>
+                    <li>Starke Belastbarkeit</li>
+                    <li>Verschleißfestigkeit</li>
+                    <li>Säure- und chemieresistent</li>
+                    <li>Fugenlos</li>
+                    <li>Hygienisch</li>
+                    <li>Pflegeleicht</li>
+                    <li>Dauerhafte Abdichtung</li>
+                    <li>Kälte flexibel</li>
+                    <li>UV-beständig</li>
+                    <li>Rissüberbrückend</li>
+                    <li>Elastisch</li>
+                    <li>Zahlreiche Designs möglich</li>
+                    <li>Elektrisch leitfähig möglich</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
 <div class="container three-columns">
     <div class="column">
-        <h3>Über uns</h3>
-        <p>Erfahren Sie mehr über unser Unternehmen, unsere Werte und unsere langjährige Erfahrung in der Boden- und Wandbeschichtung.</p>
-        <a href="{% url 'about_us' %}" class="btn">Mehr erfahren</a>
+        <h3>Rutschfeste & Glatte-belag</h3>
+        <p>Unsere rutschfesten und glatten Beläge bieten eine perfekte Kombination aus Sicherheit und Eleganz. Ideal für den privaten und gewerblichen Bereich.</p>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#aboutModal">
+            Mehr erfahren
+        </button>
     </div>
 
     <div class="column">
@@ -282,13 +316,16 @@
     </div>
 
     <div class="column">
-        <h3>Unsere Arbeiten</h3>
+        <h3>Material-Vorteile</h3>
         <div class="line-text">
-            <p>In unserer Galerie können Sie unsere abgeschlossenen Projekte entdecken und sich von der Qualität unserer Arbeit überzeugen.</p>
+            <p>Unsere modernen Bodenbeschichtungen bestehen aus hochwertigen, langlebigen und umweltfreundlichen Materialien.</p>
         </div>
-        <a href="{% url 'gallery' %}" class="btn">Zu unseren Referenzen</a>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#materialModal">
+            Mehr erfahren
+        </button>
     </div>
 </div>
+
 
 
 <div class="centered-section">
@@ -296,7 +333,7 @@
 
         <div class="row align-items-center">
             <div class="col-md-6">
-                <img src="../media/gallery/gal8.jpg" alt="Слика 1" class="img-fluid">
+                <img src="../media/gallery/gal11.jpg" alt="Слика 1" class="img-fluid">
             </div>
             <div class="col-md-6 content-box">
                 <p>Wir sind Ihr zuverlässiger Partner für professionelle Boden- und Wandbeschichtungen.
@@ -314,6 +351,66 @@
             </div>
             <div class="col-md-6">
                 <img src="../media/gallery/gal5.png" alt="Слика 2" class="img-fluid">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="aboutModal" tabindex="-1" aria-labelledby="aboutModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="aboutModalLabel">Rutschfeste & Glatte-belag</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p>Unsere Mission ist es, langlebige, ästhetisch ansprechende und funktionale Bodenlösungen zu schaffen, die den Bedürfnissen unserer Kunden gerecht werden.</p>
+
+                <!-- Rutsch-feste Belag -->
+                <h5>🦶 Rutsch-feste Belag</h5>
+                <p>Unsere rutschfesten Bodenbeläge bieten höchste Sicherheit in feuchten und stark frequentierten Bereichen. Ideal für Industrieböden, Parkhäuser und öffentliche Einrichtungen.</p>
+                <ul>
+                    <li>Hohe Rutschfestigkeit (R9-R13)</li>
+                    <li>Beständig gegen Feuchtigkeit und Chemikalien</li>
+                    <li>Geeignet für Innen- und Außenbereiche</li>
+                </ul>
+
+                <!-- Glatte Belag -->
+                <h5>✨ Glatte Belag</h5>
+                <p>Unsere glatten Bodenbeläge zeichnen sich durch eine elegante Optik und leichte Reinigung aus. Perfekt für Wohnräume, Büros und Verkaufsflächen.</p>
+                <ul>
+                    <li>Modernes und minimalistisches Design</li>
+                    <li>Pflegeleicht und langlebig</li>
+                    <li>Ideal für anspruchsvolle Innenräume</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="materialModal" tabindex="-1" aria-labelledby="materialModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="materialModalLabel">Vorteile unserer Materialien</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <ul>
+                    <li>Starke Belastbarkeit</li>
+                    <li>Verschleißfestigkeit</li>
+                    <li>Säure- und chemieresistent</li>
+                    <li>Fugenlos</li>
+                    <li>Hygienisch</li>
+                    <li>Pflegeleicht</li>
+                    <li>Dauerhafte Abdichtung</li>
+                    <li>Kälte flexibel</li>
+                    <li>UV-beständig</li>
+                    <li>Rissüberbrückend</li>
+                    <li>Elastisch</li>
+                    <li>Zahlreiche Designs möglich</li>
+                    <li>Elektrisch leitfähig möglich</li>
+                </ul>
             </div>
         </div>
     </div>
