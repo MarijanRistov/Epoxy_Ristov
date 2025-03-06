@@ -28,7 +28,9 @@ urlpatterns = [
     path('wandbeschichtungen/', views.wandbeschichtungen, name='wandbeschichtungen'),  # Wandbeschichtungen
     path('abdichtungen/', views.abdichtungen, name='abdichtungen'),  # Abdichtungen
     path('untergrundvorbereitung/', views.untergrundvorbereitung, name='untergrundvorbereitung'),  # Untergrundvorbereitung
-    path('gallery/', views.gallery, name='gallery'),  # Unsere Arbeiten
+    path('gallery/', views.gallery, name='gallery'),
+    path('impressum/', views.impressum, name='impressum'),
+    path('datenschutzerklarung/', views.datenschutzerklarung, name='datenschutzerklarung'),
     path('about-us/', views.about_us, name='about_us'),  # Kontakt
 
 ]
