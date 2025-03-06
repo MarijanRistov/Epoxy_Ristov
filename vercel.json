@@ -7,7 +7,7 @@
   "routes": [
     {
       "src": "/(.*)",
-      "dest": "GalacticCaffe/wsgi.py"
+      "dest": "MarijanApp/wsgi.py"
     }
   ]
 }
