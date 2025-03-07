@@ -9,7 +9,9 @@
     <link rel="icon" href="/media/icons/logo.png" type="image/png" sizes="32x32">
     <link rel="icon" href="/media/icons/logo-mobile.png" type="image/png" sizes="16x16">
     <link rel="icon" href="/media/icons/logo-tablet.png" type="image/png" sizes="24x24">
-    <style>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+ <style>
 /* Општи стилови */
 .carousel-caption {
     top: 50%;
@@ -194,10 +196,57 @@
 .carousel-caption p, .carousel-caption h1 {
     color: black;
 }
+
+/* Стилови за копчето за скролување */
+.scroll-to-top-btn {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    display: none; /* Копчето е скриено по подразбирање */
+    cursor: pointer;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+    .scroll-to-top-btn {
+        bottom: 20px;
+        right: 20px;
+    }
+}
+
+.scroll-to-top-btn:hover {
+    background-color: #218838;
+}
 </style>
+
+<!-- JavaScript за копчето за скролување -->
+<script>
+window.onscroll = function() {
+    var button = document.getElementById("scrollToTopBtn");
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        button.style.display = "block";
+    } else {
+        button.style.display = "none";
+    }
+};
+
+function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+
 
 </head>
 <body>
+<button id="scrollToTopBtn" class="scroll-to-top-btn" onclick="scrollToTop()">↑</button>
 
 <div class="bg-light text-center py-2">
     <strong>Telefon:</strong> <a href="tel:+436644125946">+43 664 4125946</a>  | <strong>E-mail:</strong> <a href="mailto:beschichtung.ristov@gmail.com">beschichtung.ristov@gmail.com</a>
