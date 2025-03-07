@@ -197,10 +197,29 @@
         }
 
 
+        /* novi */
 
-        .three-columns p {
-        text-align: left;
-        }
+        .three-columns {
+    display: flex;
+    gap: 20px; /* Простор помеѓу колоните */
+}
+
+.three-columns .column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
+}
+
+.three-columns .column p {
+    flex-grow: 1; /* Текстот ќе заземе максимален простор */
+}
+
+.three-columns .column .btn {
+    align-self: flex-start; /* За да остане на дното */
+}
+
+     
 
 
     </style>
