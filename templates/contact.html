@@ -224,39 +224,40 @@
 
 <!-- Contact Form Section -->
 <div class="container mt-5">
-    <h2>Kontaktieren sie uns</h2>
+    <h2 class="text-center">Kontaktieren sie uns</h2>
 
     <form id="contact-form" method="post" class="bg-light p-4 border rounded shadow-sm">
         {% csrf_token %}
 
         <div class="form-group mb-3">
             <label for="name" class="form-label">Name:</label>
-            <input type="text" id="name" name="name" class="form-control" required>
+            <input type="text" id="name" name="name" class="form-control" placeholder="Geben Sie Ihren Namen ein" required>
         </div>
 
         <div class="form-group mb-3">
             <label for="email" class="form-label">Deine E-Mail:</label>
-            <input type="email" id="email" name="email" class="form-control" required>
+            <input type="email" id="email" name="email" class="form-control" placeholder="Geben Sie Ihre E-Mail ein" required>
         </div>
 
         <div class="form-group mb-3">
             <label for="telnum" class="form-label">Tel-Nummer:</label>
-            <input type="tel" id="telnum" name="telnum" class="form-control" required>
+            <input type="tel" id="telnum" name="telnum" class="form-control" placeholder="Geben Sie Ihre Telefonnummer ein" required>
         </div>
 
         <div class="form-group mb-3">
             <label for="subject" class="form-label">Titel:</label>
-            <input type="text" id="subject" name="subject" class="form-control" required>
+            <input type="text" id="subject" name="subject" class="form-control" placeholder="Geben Sie den Titel ein" required>
         </div>
         
         <div class="form-group mb-3">
             <label for="message" class="form-label">Nachricht:</label>
-            <textarea id="message" name="message" rows="4" class="form-control" required></textarea>
+            <textarea id="message" name="message" rows="4" class="form-control" placeholder="Schreiben Sie Ihre Nachricht" required></textarea>
         </div>
 
         <button type="submit" class="btn btn-primary w-100">Absenden</button>
     </form>
 </div>
+
 
 <!-- Footer -->
 <footer class="bg-dark text-white mt-5 p-4">
